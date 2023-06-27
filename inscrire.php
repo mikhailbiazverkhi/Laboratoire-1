@@ -9,10 +9,9 @@ $errors = [
     'courriel' => '',
     'motDePasse' => '',
     'motDePasse_confirmation' => '',
-    'message_motDePasse' => ''
+    'message_motDePasse' => '',
 ];
 
-// if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 if (isset($_POST["continuer"])) {
 
     $_POST = filter_input_array(INPUT_POST, [
@@ -29,13 +28,9 @@ if (isset($_POST["continuer"])) {
 
     if (!$pseudo) {
         $errors['pseudo'] = 'Entrez le pseudo svp !';
+    } elseif (!estPseudoUnique($pseudo)) {
+        $errors['pseudo'] = 'Pseudo n\'est pas unique';
     }
-    //elseif($pseudo = ){
-
-    // TO DO
-
-    //    $errors['pseudo'] = 'Pseudo n\'est pas unique';
-    //}
 
     if (!$courriel) {
         $errors['courriel'] = 'Entrez le courriel svp !';
@@ -60,17 +55,18 @@ if (isset($_POST["continuer"])) {
             $users = json_decode(file_get_contents($filename), true) ?? [];
         }
 
-        if(!empty($users))
+        if (!empty($users)) {
             $userId = $users[count($users) - 1]['userId'];
-        else
+        } else {
             $userId = 0;
+        }
 
         $users = [...$users, [
 
-            'pseudo' => $pseudo,
-            'courriel' => $courriel,
+            'pseudo' => trim($pseudo),
+            'courriel' => trim($courriel),
             'motDePasse' => $motDePasse,
-            'userId' => ++ $userId,
+            'userId' => ++$userId,
         ],
         ];
 
@@ -81,8 +77,24 @@ if (isset($_POST["continuer"])) {
     if (isset($_POST["annuler"])) {
         //header('Location: /');
     }
-
 }
+
+function estPseudoUnique($pseudo)
+{
+    global $filename;
+    if (file_exists($filename)) {
+        $users = json_decode(file_get_contents($filename), true) ?? [];
+    }
+    if (!empty($users)) {
+        foreach ($users as $user) {
+            if ($user['pseudo'] == $pseudo) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
 ?>
 
 
@@ -105,35 +117,35 @@ if (isset($_POST["continuer"])) {
    <div class="input-field">
     <input type="text" name="pseudo" id="pseudo" value="<?=$pseudo ?? ''?>" placeholder="Entrer un pseudo"/>
     <div class="underline"></div>
-    <?php if($errors['pseudo']) : ?>
+    <?php if ($errors['pseudo']): ?>
         <p style="color:red;"><?=$errors['pseudo']?></p>
-    <?php endif; ?>
+    <?php endif;?>
    </div>
    <div class="input-field">
     <input type="text" name="courriel" id="courriel" value="<?=$courriel ?? ''?>" placeholder="Entrer un courriel"/>
     <div class="underline"></div>
-    <?php if($errors['courriel']) : ?>
+    <?php if ($errors['courriel']): ?>
         <p style="color:red;"><?=$errors['courriel']?></p>
-    <?php endif; ?>
+    <?php endif;?>
    </div>
 
    <div class="input-field">
     <input type="password" name="motDePasse" id="motDePasse" value="<?=$motDePasse ?? ''?>" placeholder="Entrer le mot de passe"/>
     <div class="underline"></div>
-    <?php if($errors['motDePasse']) : ?>
+    <?php if ($errors['motDePasse']): ?>
         <p style="color:red;"><?=$errors['motDePasse']?></p>
-    <?php endif; ?>
+    <?php endif;?>
    </div>
    <div class="input-field">
     <input type="password" name="motDePasse_confirmation" id="motDePasse_confirmation" value="<?=$motDePasse_confirmation ?? ''?>" placeholder="Confirmer le mot de passe"/>
     <div class="underline"></div>
-    <?php if($errors['motDePasse_confirmation']) : ?>
+    <?php if ($errors['motDePasse_confirmation']): ?>
         <p style="color:red;"><?=$errors['motDePasse_confirmation']?></p>
-    <?php endif; ?>
+    <?php endif;?>
    </div>
-    <?php if($errors['message_motDePasse']) : ?>
+    <?php if ($errors['message_motDePasse']): ?>
         <p style="color:red;"><?=$errors['message_motDePasse']?></p>
-    <?php endif; ?>
+    <?php endif;?>
 
    <input type="submit" name="continuer" value="Continuer"/>
    <input type="submit" name="annuler" value="Annuler"/>

@@ -22,5 +22,11 @@
     "courriel": "gg@gg.gg",
     "motDePasse": "123",
     "userId": 4
+  },
+  {
+    "pseudo": "user5",
+    "courriel": "sd@vv.vv",
+    "motDePasse": "123",
+    "userId": 5
   }
 ]
