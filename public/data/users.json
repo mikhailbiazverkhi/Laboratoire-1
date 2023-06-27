@@ -1,31 +1,31 @@
 [
   {
-    "pseudo": "user1",
-    "courriel": "u@rr.ww",
+    "pseudo": "USER0",
+    "courriel": "asas@wer.we",
     "motDePasse": "123",
     "userId": 1
   },
   {
-    "pseudo": "user2",
-    "courriel": "d@dd.dd",
+    "pseudo": "USER1",
+    "courriel": "asas@wer.we",
     "motDePasse": "123",
     "userId": 2
   },
   {
-    "pseudo": "user3",
-    "courriel": "aa@aa.aa",
+    "pseudo": "USER2",
+    "courriel": "asas@wer.we",
     "motDePasse": "123",
     "userId": 3
   },
   {
-    "pseudo": "user4",
-    "courriel": "gg@gg.gg",
+    "pseudo": "mike",
+    "courriel": "asas@wer.we",
     "motDePasse": "123",
     "userId": 4
   },
   {
-    "pseudo": "user5",
-    "courriel": "sd@vv.vv",
+    "pseudo": "nabil",
+    "courriel": "asas@wer.we",
     "motDePasse": "123",
     "userId": 5
   }
