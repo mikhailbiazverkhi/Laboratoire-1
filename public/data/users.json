@@ -1,0 +1,26 @@
+[
+  {
+    "pseudo": "user1",
+    "courriel": "u@rr.ww",
+    "motDePasse": "123",
+    "userId": 1
+  },
+  {
+    "pseudo": "user2",
+    "courriel": "d@dd.dd",
+    "motDePasse": "123",
+    "userId": 2
+  },
+  {
+    "pseudo": "user3",
+    "courriel": "aa@aa.aa",
+    "motDePasse": "123",
+    "userId": 3
+  },
+  {
+    "pseudo": "user4",
+    "courriel": "gg@gg.gg",
+    "motDePasse": "123",
+    "userId": 4
+  }
+]
