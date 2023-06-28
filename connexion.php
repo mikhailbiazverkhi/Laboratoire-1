@@ -45,7 +45,10 @@ if (isset($_POST["continuer"])) {
                         "courriel" => $user["courriel"]
                     ];
 
-                    header('Location: /signin.php');
+                    //header('Location: /signin.php');
+                    header('Location: /ajoutRepas.php');
+
+
                 }
                 else {
                    $errors['messageDeConnexion'] = 'Entrez le pseudo ou le mot de passe valide !'; 

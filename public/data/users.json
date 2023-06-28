@@ -9,7 +9,41 @@
     "pseudo": "USER1",
     "courriel": "asas@wer.we",
     "motDePasse": "123",
-    "userId": 2
+    "userId": 2,
+    "repas": [
+      {
+        "nomRepas": "Repas2",
+        "cheminImage": "uploads/1687919067_OIP.jpg",
+        "prixRepas": "122",
+        "localisation": "Brossard",
+        "description": "1232",
+        "repasId": 1687919067
+      },
+      {
+        "nomRepas": "Repas1",
+        "cheminImage": "uploads/1687919319_OIP 2222.jpg",
+        "prixRepas": "12",
+        "localisation": "Brossard",
+        "description": "234213",
+        "repasId": 1687919319
+      },
+      {
+        "nomRepas": "Repas2",
+        "cheminImage": "uploads/1687919332_OIP.jpg",
+        "prixRepas": "122",
+        "localisation": "Brossard",
+        "description": "234213",
+        "repasId": 1687919332
+      },
+      {
+        "nomRepas": "Repas3",
+        "cheminImage": "uploads/1687919516_OIP111.jpg",
+        "prixRepas": "12233",
+        "localisation": "Brossard",
+        "description": "234213",
+        "repasId": 1687919516
+      }
+    ]
   },
   {
     "pseudo": "USER2",
@@ -27,7 +61,33 @@
     "pseudo": "nabil",
     "courriel": "asas@wer.we",
     "motDePasse": "123",
-    "userId": 5
+    "userId": 5,
+    "repas": [
+      {
+        "nomRepas": "Repas3",
+        "cheminImage": "uploads/1687919593_OIP111.jpg",
+        "prixRepas": "1",
+        "localisation": "Brossard",
+        "description": "1243124",
+        "repasId": 1687919593
+      },
+      {
+        "nomRepas": "Repas4",
+        "cheminImage": "uploads/1687919686_t\u00e9l\u00e9chargement.jpg",
+        "prixRepas": "14",
+        "localisation": "Brossard",
+        "description": "1243124",
+        "repasId": 1687919686
+      },
+      {
+        "nomRepas": "Repas5",
+        "cheminImage": "uploads/1687919810_OIP111.jpg",
+        "prixRepas": "14",
+        "localisation": "Brossard",
+        "description": "1243124",
+        "repasId": 1687919810
+      }
+    ]
   },
   {
     "pseudo": "user10",
