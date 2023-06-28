@@ -12,34 +12,34 @@
     "userId": 2,
     "repas": [
       {
-        "nomRepas": "Repas2",
-        "cheminImage": "uploads/1687919067_OIP.jpg",
-        "prixRepas": "122",
+        "nomRepas": "Repas1",
+        "cheminImage": "uploads/7.png",
+        "prixRepas": "8.24",
         "localisation": "Brossard",
         "description": "1232",
         "repasId": 1687919067
       },
       {
-        "nomRepas": "Repas1",
-        "cheminImage": "uploads/1687919319_OIP 2222.jpg",
-        "prixRepas": "12",
+        "nomRepas": "Repas2",
+        "cheminImage": "uploads/imagePng.png",
+        "prixRepas": "9.24",
         "localisation": "Brossard",
         "description": "234213",
         "repasId": 1687919319
       },
       {
-        "nomRepas": "Repas2",
-        "cheminImage": "uploads/1687919332_OIP.jpg",
-        "prixRepas": "122",
-        "localisation": "Brossard",
+        "nomRepas": "Repas3",
+        "cheminImage": "uploads/imagePng.png",
+        "prixRepas": "16.24",
+        "localisation": "Richelieu",
         "description": "234213",
         "repasId": 1687919332
       },
       {
-        "nomRepas": "Repas3",
-        "cheminImage": "uploads/1687919516_OIP111.jpg",
-        "prixRepas": "12233",
-        "localisation": "Brossard",
+        "nomRepas": "Repas4",
+        "cheminImage": "uploads/imagepng4.png",
+        "prixRepas": "6.24",
+        "localisation": "Richelieu",
         "description": "234213",
         "repasId": 1687919516
       }
@@ -64,25 +64,25 @@
     "userId": 5,
     "repas": [
       {
-        "nomRepas": "Repas3",
-        "cheminImage": "uploads/1687919593_OIP111.jpg",
-        "prixRepas": "1",
-        "localisation": "Brossard",
+        "nomRepas": "Repas5",
+        "cheminImage": "uploads/imgP.png",
+        "prixRepas": "6.24",
+        "localisation": "Montréal",
         "description": "1243124",
         "repasId": 1687919593
       },
       {
-        "nomRepas": "Repas4",
-        "cheminImage": "uploads/1687919686_t\u00e9l\u00e9chargement.jpg",
-        "prixRepas": "14",
+        "nomRepas": "Repas6",
+        "cheminImage": "uploads/imgPng7.png",
+        "prixRepas": "6.24",
         "localisation": "Brossard",
         "description": "1243124",
         "repasId": 1687919686
       },
       {
-        "nomRepas": "Repas5",
-        "cheminImage": "uploads/1687919810_OIP111.jpg",
-        "prixRepas": "14",
+        "nomRepas": "Repas7",
+        "cheminImage": "uploads/imgPng6.png",
+        "prixRepas": "6.24",
         "localisation": "Brossard",
         "description": "1243124",
         "repasId": 1687919810
@@ -99,7 +99,17 @@
     "pseudo": "user7",
     "courriel": "sdf@dff.com",
     "motDePasse": "123",
-    "userId": 7
+    "userId": 7,
+    "repas": [
+      {
+        "nomRepas": "Repas8",
+        "cheminImage": "uploads/imgPng5.png",
+        "prixRepas": "6.24",
+        "localisation": "Montréal",
+        "description": "1243124",
+        "repasId": 1687919593
+      }
+    ]
   },
   {
     "pseudo": "user8",
