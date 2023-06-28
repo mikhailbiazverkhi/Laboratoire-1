@@ -45,7 +45,6 @@ if (isset($_POST["continuer"])) {
                         "courriel" => $user["courriel"]
                     ];
 
-                    //header('Location: /signin.php');
                     header('Location: /ajoutRepas.php');
 
 
@@ -64,8 +63,6 @@ if (isset($_POST["continuer"])) {
 if (isset($_POST["annuler"])) { 
     header('Location: /');
 }
-
-
 ?>
 
 

@@ -71,12 +71,12 @@ if (isset($_POST["continuer"])) {
         ];
 
         file_put_contents($filename, json_encode($users));
-        //header('Location: /');
+        header('Location: /connexion.php');
     }
 }
 
     if (isset($_POST["annuler"])) {
-        //header('Location: /');
+        header('Location: /');
     }
 
     function estPseudoUnique($pseudo)
