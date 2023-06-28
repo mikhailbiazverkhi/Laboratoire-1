@@ -21,7 +21,7 @@ body {
 main.container {
   background: white;
   min-width: 640px;
-  min-height: 80vh;
+  min-height: 45vh;  /* min-height: 80vh;  */
   padding: 2rem;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
@@ -116,16 +116,16 @@ form input[type='submit']:hover {
 .footer {
   display: flex;
   flex-direction: column;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 .footer span {
   color: rgba(0, 0, 0, 0.7);
-  font-size: 0.8rem;
+  font-size: 1rem; /* font-size: 0.8rem; */
   text-align: center;
 }
 
-.footer .social-field {
+/* .footer .social-field {
   padding: 0.4rem;
   border-radius: 4px;
   font-size: 0.85rem;
@@ -150,4 +150,4 @@ form input[type='submit']:hover {
 
 .footer .social-field.facebook {
   background: linear-gradient(to right, #1e3c72, #2a5298);
-}
+} */

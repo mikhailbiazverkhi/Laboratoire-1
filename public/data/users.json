@@ -28,5 +28,23 @@
     "courriel": "asas@wer.we",
     "motDePasse": "123",
     "userId": 5
+  },
+  {
+    "pseudo": "user10",
+    "courriel": "asas@wer.we",
+    "motDePasse": "123",
+    "userId": 6
+  },
+  {
+    "pseudo": "user7",
+    "courriel": "sdf@dff.com",
+    "motDePasse": "123",
+    "userId": 7
+  },
+  {
+    "pseudo": "user8",
+    "courriel": "sdf@dff.com",
+    "motDePasse": "123",
+    "userId": 8
   }
 ]

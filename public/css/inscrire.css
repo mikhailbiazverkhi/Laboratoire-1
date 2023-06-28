@@ -21,7 +21,7 @@ body {
 main.container {
   background: white;
   min-width: 640px;
-  min-height: 80vh;
+  min-height: 58vh;  /* min-height: 80vh;  */
   padding: 2rem;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
@@ -111,4 +111,16 @@ form input[type='submit'] {
 form input[type='submit']:hover {
   letter-spacing: 0.5px;
   background: linear-gradient(to right, #00bd7e, #c6dfd7);
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.footer span {
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 1rem; /* font-size: 0.8rem; */
+  text-align: center;
 }

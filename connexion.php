@@ -1,5 +1,5 @@
 <?php
-// session_start();
+session_start();
 // require './user.php';
 
 $filename = __DIR__ . '/public/data/users.json';
@@ -38,6 +38,13 @@ if (isset($_POST["continuer"])) {
         if (!empty($users)) {
             foreach($users as $user){
                 if($user['pseudo'] === $pseudo && $user['motDePasse'] === $motDePasse){
+
+                    $_SESSION['user'] = [
+                        "userId" => $user["userId"],
+                        "pseudo" => $user["pseudo"],
+                        "courriel" => $user["courriel"]
+                    ];
+
                     header('Location: /signin.php');
                 }
                 else {
@@ -49,14 +56,11 @@ if (isset($_POST["continuer"])) {
             $errors['messageDeConnexion'] = 'Créez votre compte !'; 
         }
     }
-
-    //print_r($_POST);
-
-    if (isset($_POST["annuler"])) {   // check!!!
-        header('Location: /signin.php');
-    }
 }
 
+if (isset($_POST["annuler"])) { 
+    header('Location: /');
+}
 
 
 ?>
@@ -104,21 +108,25 @@ if (isset($_POST["continuer"])) {
   </form>
 
   <div class="footer">
-   <span>Ou se connecter avec les reseaux sociaux</span>
-   <div class="social-fields">
-    <div class="social-field twitter">
-     <a href="#">
-      <i class="fab fa-twitter"></i>
-      Sign in with Twitter
-     </a>
-    </div>
-    <div class="social-field facebook">
-     <a href="#">
-      <i class="fab fa-facebook-f"></i>
-      Sign in with Facebook
-     </a>
-    </div>
-   </div>
+  <!-- <span>Avez-vous déjà un compte? <a href="./connexion.php"><u>Identification ici</u></a></span> -->
+  <span>N'avez-vous pas de compte? <a href="./inscrire.php"><u>Enregistrer ici</u></a></span>
+
+
+   <!-- <span>Ou se connecter avec les reseaux sociaux</span> -->
+   <!-- <div class="social-fields"> -->
+    <!-- <div class="social-field twitter"> -->
+     <!-- <a href="#"> -->
+      <!-- <i class="fab fa-twitter"></i> -->
+      <!-- Sign in with Twitter -->
+     <!-- </a> -->
+    <!-- </div> -->
+    <!-- <div class="social-field facebook"> -->
+     <!-- <a href="#"> -->
+      <!-- <i class="fab fa-facebook-f"></i> -->
+      <!-- Sign in with Facebook -->
+     <!-- </a> -->
+    <!-- </div> -->
+   <!-- </div> -->
   </div>
  </main>
 </body>

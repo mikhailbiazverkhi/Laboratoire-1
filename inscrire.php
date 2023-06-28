@@ -73,27 +73,27 @@ if (isset($_POST["continuer"])) {
         file_put_contents($filename, json_encode($users));
         //header('Location: /');
     }
+}
 
     if (isset($_POST["annuler"])) {
         //header('Location: /');
     }
-}
 
-function estPseudoUnique($pseudo)
-{
-    global $filename;
-    if (file_exists($filename)) {
-        $users = json_decode(file_get_contents($filename), true) ?? [];
-    }
-    if (!empty($users)) {
-        foreach ($users as $user) {
-            if ($user['pseudo'] == $pseudo) {
-                return false;
+    function estPseudoUnique($pseudo)
+    {
+        global $filename;
+        if (file_exists($filename)) {
+            $users = json_decode(file_get_contents($filename), true) ?? [];
+        }
+        if (!empty($users)) {
+            foreach ($users as $user) {
+                if ($user['pseudo'] == $pseudo) {
+                    return false;
+                }
             }
         }
+        return true;
     }
-    return true;
-}
 
 ?>
 
@@ -151,6 +151,9 @@ function estPseudoUnique($pseudo)
    <input type="submit" name="annuler" value="Annuler"/>
   </form>
 
+  <div class="footer">
+    <span>Avez-vous déjà un compte? <a href="./connexion.php"><u>Identification ici</u></a></span>
+  </div>
 
  </main>
 </body>
