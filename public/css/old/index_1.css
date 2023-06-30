@@ -116,6 +116,13 @@ li {
   background: var(--primaryColor);
 }
 
+/* ??? */
+/* .boxesContainer .boxContent .boxImgDiv {
+  margin: auto;
+  -webkit-transform: translateY(-10px);
+  transform: translateY(-10px);
+} */
+
 .boxesContainer .boxContent .boxImgDiv img {
   width: 180px;
   height: 180px;    /**/
@@ -172,7 +179,9 @@ li {
   .section {
     padding: 6rem 0;
   }
-
+  /* .cartGrid {
+    padding: 2rem 4rem;
+  } */
   .boxesContainer .sHide {
     display: block;
   }
@@ -188,13 +197,50 @@ li {
   .navList .navItem .navLink:hover {
     color: var(--primaryColor);
   }
-  
+  /* .promoDiv {
+    width: 70%;
+  } */
+  /* .cartGrid {
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+  } */
+  /* .cartDiv .cartIcon {
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 6px;
+  } */
+  /* .headerFooterDiv,
+  .toggleDiv,
+  .closeIconDiv {
+    display: none;
+  } */
+  /* .sectionData,
+  .contactRow {
+    -ms-grid-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+  } */
   .boxesContainer
+  /* , */
+  /* .chefData, */
+  /* .boxes, */
+  /* .contentContainer  */
   {
     -ms-grid-columns: 1fr 1fr 1fr;
     grid-template-columns: repeat(3, 1fr);
   }
-  
+  /* .footerForm {
+    width: 100%;
+    margin: auto;
+  } */
+
+  /* #btn {
+    display: none;
+  } */
+
+  /* .homeImg {
+    transform: translateY(-60px);
+    width: 500px;
+  } */
   .sectionTop {
     box-sizing: border-box;
     padding: 1rem 5rem !important;
@@ -218,9 +264,56 @@ li {
   .navBar .navItem {
     margin: 0 1rem !important;
   }
-  
+  /* .content {
+    padding: 2.5rem 2.5rem 0;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+  } */
+  /* .homeImg {
+    transform: translateY(0px);
+    width: 500px;
+  } */
+  /* .homeSection {
+    position: relative;
+  } */
+  /* .homeSection .circle {
+    position: absolute;
+    transform: translateY(0);
+    height: 92%;
+    width: 700px;
+    border-radius: 50%;
+    background: var(--primaryColor);
+    left: 700px;
+    bottom: 0;
+    z-index: 1;
+  } */
+  /* .contentWrapper {
+    -ms-grid-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
+  } */
+  /* .sectionBanner {
+    height: 500px;
+  }
+  .offerContent {
+    top: 35%;
+  } */
   .container {
     width: 70%;
     margin: auto;
   }
+  /* .homeText span {
+    font-size: 1.5rem !important;
+  }
+  .homeText .introText {
+    font-size: 3rem !important;
+  }
+  .homeText .homeParagraph {
+    font-size: 18px;
+  }
+  .homeText .btn a {
+    font-size: 20px;
+  } */
 }

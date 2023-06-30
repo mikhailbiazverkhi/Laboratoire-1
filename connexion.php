@@ -29,6 +29,13 @@ if (isset($_POST["continuer"])) {
         $errors['motDePasse'] = 'Entrez le mot de passe svp !';
     }
 
+    // $chemin_avatar = 'avatars/' . time() . '_' . $_FILES['avatar']['name'];
+
+    // if (!move_uploaded_file($_FILES['avatar']['tmp_name'], './' . $chemin_avatar)) {
+    //     $errors['uploadAvatar'] = 'L\'Avatar téléchargée avec erreur';
+    //     // header('Location: /ajoutRepas.php');
+    // }
+
 
     if (empty(array_filter($errors, fn($e) => $e !== ''))) {
         if (file_exists($filename)) {
@@ -43,9 +50,10 @@ if (isset($_POST["continuer"])) {
                         "userId" => $user["userId"],
                         "pseudo" => $user["pseudo"],
                         "courriel" => $user["courriel"]
+                        // "avatar" => $chemin_avatar
                     ];
 
-                    header('Location: /ajoutRepas.php');
+                    header('Location: /indexUser.php');
 
 
                 }

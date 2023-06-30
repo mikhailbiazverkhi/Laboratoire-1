@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-// if(!isset($_SESSION['user'])){
-//   header('Location: /');
-// }
+if(!isset($_SESSION['user'])){
+  header('Location: /');
+}
 
 $filename = __DIR__ . '/public/data/users.json';
 
@@ -88,13 +88,14 @@ if (isset($_POST["ajouter"])) {
         ];
 
         file_put_contents($filename, json_encode($users));
-        //header('Location: /');
+
+          header('Location: /indexUser.php');
+
     }
 }
 
-
 if (isset($_POST["annuler"])) { 
-  header('Location: /');
+  header('Location: /indexUser.php');
 }
 
 ?>
