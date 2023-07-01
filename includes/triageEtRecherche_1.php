@@ -6,11 +6,12 @@
           </a>
 
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-
           <?php foreach ($localisations as $localisation) : ?>
-            <li><a class="navLink dropdown-item" href="#"><?=$localisation?></a></li>
+            <li><a class="dropdown-item" href="#"><?=$localisation?></a></li>
           <?php endforeach; ?>
-
+            <!-- <li><a class="dropdown-item" href="#">Another action</a></li> -->
+            <!-- <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li> -->
           </ul>
         </li>
 
@@ -20,15 +21,10 @@
           </a>
 
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="navLink dropdown-item" href="#">Croissant</a></li>
-            <li><a class="navLink dropdown-item" href="#">Décroissant</a></li>
+            <li><a class="dropdown-item" href="#">Croissant</a></li>
+            <li><a class="dropdown-item" href="#">Décroissant</a></li>
           </ul>
         </li>
-
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
         
 
             
