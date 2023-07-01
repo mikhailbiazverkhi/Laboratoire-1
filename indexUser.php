@@ -120,11 +120,11 @@ echo '</pre>';
 	               <span class="imageTitle"><?=$repas['nomRepas']?></span>
 	            </div>
 
-	            <span class="boxImgPrice">
+	            <span class="boxPrice">
 	               $<?=$repas['prixRepas']?>
 	            </span>
                
-	            <span class="boxImgPrice">
+	            <span class="boxLocalisation">
 	               <?=$repas['localisation']?>
 	            </span>
 

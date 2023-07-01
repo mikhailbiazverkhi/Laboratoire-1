@@ -25,47 +25,124 @@ html {
 }
 
 body {
+  /* background: linear-gradient(20deg, #a0bfb5, #4b5652); */
   background: linear-gradient(20deg, #c5c8c7, var(--primaryColor));
   background-repeat: no-repeat;
   height: 100vh;
   width: 100vw;
+  /* display: flex; */
 }
 
 .container {
-  /* margin: 2rem 3rem; */
+  margin: 2rem 3rem;
+  /* margin-left: 1.5rem;
+  margin-right: 1.5rem; */
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+
 }
 
+/* img {
+  width: 100%;
+} */
+
+/* .grid {
+  display: -ms-grid;
+  display: grid;
+  gap: 1rem;
+} */
+
+
+
+/* .container {
+  width: 70%;
+  margin: auto;
+} */
+
+/* .section {
+  padding: 4rem 0 2rem;
+}
+
+.icon {
+  font-size: 2rem;
+}
+
+.btn {
+  margin: 1rem 0;
+} */
+
+/* a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+} */
+/* 
+.section .title {
+  color: var(--secondaryColor);
+  text-align: center;
+} */
+
+
+
+
+
+/* .profil {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.profil h2 {
+  margin-top: 200px;
+  padding-left: 20px;
+}
+.profil span {
+  color: rgb(0, 30, 255);
+}
+.profil img {
+  margin-top: 150px;
+  margin-left: 150px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: solid 5px black;
+} */
 
 .boxesContainer {
   flex: 1 1 0px;
+  /* margin-top: 10px; */
   display: flex;
   flex-direction: column;
+  /* flex-wrap: wrap; */
   justify-content: center;
   align-items: center;
+  /* width: 100%;
+  gap: 1rem; */
 }
 
 .boxesContainer .boxContent {
   background: var(--greyBG);
   margin: 1rem 10rem;
   text-align: center;
-  border-radius: 20px;
+  border-radius: 0 0 20px 20px;
 }
 
-/* .boxesContainer .boxContent:hover {
+.boxesContainer .boxContent:hover {
   background: var(--primaryColor);
-} */
+}
 
-/* .boxesContainer .boxContent .boxImgDiv {
-  margin: auto; */
-  /* transform: translateY(-10px);
+.boxesContainer .boxContent .boxImgDiv {
+  /* margin: auto; */
+  /* transform: translateY(-10px); */
+  margin: ;
   
-} */
+}
 
 .boxesContainer .boxContent .boxImgDiv img {
-  max-width: 100wv;
+  width: 100wv;
   border-radius: 20px 20px 0 0;
 }
 

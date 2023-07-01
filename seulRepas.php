@@ -6,6 +6,7 @@
 
 $filename = __DIR__ . '/public/data/users.json';
 $repasId = $_GET['id'];
+$repasChoisi = [];
 
 // print_r($repasId);
 
@@ -18,9 +19,12 @@ foreach ($users as $user) {
         foreach ($user['repas'] as $repas) {
             if ($repas['repasId'] == $repasId) {
                 // echo '<pre>';
-                // print_r($repas);
-                // echo '</pre>';
-                // echo "UserId: ".$user['userId'];
+                $repasChoisi = $repas;
+//                 print_r($repas);
+//                 echo '</pre>';
+//                 echo "UserId: ".$user['userId'];
+// echo '<br>';    
+//                 echo $repas['cheminImage'];
                 break;
             }
         }
@@ -39,39 +43,53 @@ foreach ($users as $user) {
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>User account</title>
  <link rel="stylesheet" href="public/css/account.css">
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 
 <body>
- <main class="container">
-  <!-- <div class="profil">
-   <img src="<?=$repas['cheminImage']?>" alt="profile">
-   <h2> Hey <span>ANNA</span> Welcome back !</h2>
-  </div> -->
+ <div class="container">
   <div class="boxesContainer">
    <div class="boxContent">
     <div class="boxImgDiv">
-     <img src="<?=$repas['cheminImage']?>" alt="Food Image" class="boxImg">
+     <!-- <img src="<?=$repasChoisi['cheminImage']?>" alt="Food Image"> -->
+     <img src="<?=$repasChoisi['cheminImage']?>" class="img-fluid" alt="Food Image">
     </div>
-    <div class="imgDesc">
-     <span class="imageTitle">Repas 1</span>
-    </div>
-    <span class="boxImgPrice">
-        <?=$repas['prixRepas']?>$
+
+    <span class="imageTitle">
+        <?=$repasChoisi['nomRepas']?>
     </span>
-    <span class="boxImgPrice">
-        <?=$repas['localisation']?>
+    <span class="boxPrice">
+        <?=$repasChoisi['prixRepas']?>$
     </span>
-    <div class="boxImgBtn">
+    <span class="boxLocalisation">
+        <?=$repasChoisi['localisation']?>
+    </span>
+
+    <!-- <div class="boxImgBtn">
      <div><button type="button" class="modifier btn-primary">Modifier</button></div>
 
      <div><button type="button" class="supprimer btn-secondary">Supprimer</button></div>
+    </div> -->
+
+    <div class="imgDesc"> 
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam quos excepturi aperiam sed voluptatem. Quos animi ullam quo aliquam, qui, at, reprehenderit quam sint explicabo doloribus ipsa! Eius, veritatis aliquam?
     </div>
+    </div>
+    <!-- <div class="boxContent">
 
-   </div>
-
+</div> -->
 
   </div>
- </main>
+  <div class="boxesContainer">
+  <div class="boxContent">
+    <?=$repasChoisi['cheminImage']?>
+</div>
+<textarea name="" id="" cols="30" rows="10"></textarea>
+
+</div>
+
+</div>
 </body>
 
 </html>
