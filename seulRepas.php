@@ -145,7 +145,6 @@ if (isset($_POST["annuler"])) {
         <input name="commentaire" id="commentaire" value="<?=$commentaire ?? ''?>">
         <!-- <textarea name="commentaire" id="commentaire" cols="50" rows="3">
         </textarea> -->
-
         <?php if ($errors['commentaire']): ?>
           <p style="color:red;"><?=$errors['commentaire']?></p>
         <?php endif;?>
@@ -153,8 +152,9 @@ if (isset($_POST["annuler"])) {
         <input type="submit" name="envoyer" value="Envoyer">
         <input type="submit" name="annuler" value="Annuler">
     </form>
+    <?php else :?>
+        <h3>Le repas d'utilisateur: <span><?=$_SESSION['user']['pseudo']?></span></h3>
     <?php endif;?>
-
 <br><br>
 
     <h3>Tous les commentaires: </h3>
@@ -173,6 +173,14 @@ if (isset($_POST["annuler"])) {
   <?php endforeach;?>
     </table>
 
+<br><br>
+    <?php if($_SESSION['user']['userId'] == $userId) : ?>
+
+        <button>Modifier</button>
+
+<br><br>
+        <button>Supprimer</button>
+    <?php endif;?>
 </div>
 
 </div>
