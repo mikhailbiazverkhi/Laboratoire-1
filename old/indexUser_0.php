@@ -45,10 +45,6 @@ echo '<pre>';
 // print_r($userRepasLocalisation);
 echo '</pre>';
 
-$pageTitle = "Oeuvres des Cegeps de ".$userPseudo;
-
-/////////////////////////////
-$tableauRepas = $userRepas;
 
 // die;
 ?>
@@ -108,9 +104,7 @@ $tableauRepas = $userRepas;
 
    </header>
 
-   <?php require "./listeRepas.php"?>
-
-   <!-- <section class="productionSection section" id="shop">
+   <section class="productionSection section" id="shop">
       <div class="sectionIntro">
          <div class="headerInfo container">
             <h2 class="title">Oeuvres des Cegeps de <?=$userPseudo?><h2>
@@ -143,7 +137,7 @@ $tableauRepas = $userRepas;
 	         </div>
 	      <?php endforeach; ?>
       </div>
-   </section> -->
+   </section>
 </body>
 
 </html>

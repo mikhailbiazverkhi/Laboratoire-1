@@ -25,8 +25,6 @@ $localisations = array_unique(array_column($tableauRepas, 'localisation'));
 // echo "</pre>";
 
 // die;
-
-$pageTitle = "Oeuvres des Cegeps";
 ?>
 
 <!DOCTYPE html>
@@ -92,9 +90,7 @@ $pageTitle = "Oeuvres des Cegeps";
       </div>
    </header>
 
-   <?php require "./listeRepas.php"?>
-
-   <!-- <section class="productionSection section">
+   <section class="productionSection section">
       <div class="sectionIntro">
          <div class="headerInfo container">
             <h2 class="title">Oeuvres des Cegeps<h2>
@@ -128,7 +124,7 @@ $pageTitle = "Oeuvres des Cegeps";
       <?php endforeach;?>
 
       </div>
-   </section> -->
+   </section>
 </body>
 
 </html>
