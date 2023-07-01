@@ -21,7 +21,7 @@ body {
 main.container {
   background: white;
   min-width: 640px;
-  min-height: 78vh;  /* min-height: 80vh;  */
+  /* min-height: 80vh;  */
   padding: 2rem;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
@@ -119,11 +119,12 @@ form input[type='submit']:hover {
   flex-direction: column;
 }
 .description textarea {
+  outline: none;
   margin-top: 15px;
   height: 100px;
   border: solid 3px gray;
 }
-.avis {
+/* .avis {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -133,7 +134,7 @@ form input[type='submit']:hover {
   height: 100px;
   border: solid 3px gray;
   border-radius: 4px;
-}
+} */
 
 /* .text-danger {
   color: red;

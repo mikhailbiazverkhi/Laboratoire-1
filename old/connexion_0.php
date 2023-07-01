@@ -1,12 +1,14 @@
 <?php
 session_start();
+// require './user.php';
 
 $filename = __DIR__ . '/public/data/users.json';
 
 $errors = [
     'pseudo' => '',
     'motDePasse' => '',
-    'messageDeConnexion' => '',
+    // message TO DO il faut faire la registration
+    'messageDeConnexion' => ''
 ];
 
 if (isset($_POST["continuer"])) {
@@ -21,11 +23,19 @@ if (isset($_POST["continuer"])) {
 
     if (!$pseudo) {
         $errors['pseudo'] = 'Entrez le pseudo svp !';
-    }
+    } 
 
     if (!$motDePasse) {
         $errors['motDePasse'] = 'Entrez le mot de passe svp !';
     }
+
+    // $chemin_avatar = 'avatars/' . time() . '_' . $_FILES['avatar']['name'];
+
+    // if (!move_uploaded_file($_FILES['avatar']['tmp_name'], './' . $chemin_avatar)) {
+    //     $errors['uploadAvatar'] = 'L\'Avatar téléchargée avec erreur';
+    //     // header('Location: /ajoutRepas.php');
+    // }
+
 
     if (empty(array_filter($errors, fn($e) => $e !== ''))) {
         if (file_exists($filename)) {
@@ -33,31 +43,38 @@ if (isset($_POST["continuer"])) {
         }
 
         if (!empty($users)) {
-            foreach ($users as $user) {
-                if ($user['pseudo'] === $pseudo && $user['motDePasse'] === $motDePasse) {
+            foreach($users as $user){
+                if($user['pseudo'] === $pseudo && $user['motDePasse'] === $motDePasse){
 
                     $_SESSION['user'] = [
                         "userId" => $user["userId"],
                         "pseudo" => $user["pseudo"],
-                        "courriel" => $user["courriel"],
+                        "courriel" => $user["courriel"]
+                        // "avatar" => $chemin_avatar
                     ];
 
                     header('Location: /indexUser.php');
 
-                } else {
-                    $errors['messageDeConnexion'] = 'Entrez le pseudo ou le mot de passe valide !';
+
                 }
-            }
-        } else {
-            $errors['messageDeConnexion'] = 'Créez votre compte !';
+                else {
+                   $errors['messageDeConnexion'] = 'Entrez le pseudo ou le mot de passe valide !'; 
+                }
+            }       
+        } 
+        else {
+            $errors['messageDeConnexion'] = 'Créez votre compte !'; 
         }
     }
 }
 
-if (isset($_POST["annuler"])) {
+if (isset($_POST["annuler"])) { 
     header('Location: /');
 }
 ?>
+
+
+
 
 
 <!DOCTYPE html>
@@ -67,14 +84,14 @@ if (isset($_POST["annuler"])) {
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>Log In</title>
- <link rel="stylesheet" href="public/css/style.css">
+ <link rel="stylesheet" href="public/css/connexion.css">
 </head>
 
 <body>
 
  <main class="container">
   <h2>Login</h2>
-  <form class="gap" action="" method="POST">
+  <form action="" method="POST">
    <div class="input-field">
     <input type="text" name="pseudo" id="pseudo" value="<?=$pseudo ?? ''?>" placeholder="Enter votre pseudo"/>
     <div class="underline"></div>
@@ -99,7 +116,25 @@ if (isset($_POST["annuler"])) {
   </form>
 
   <div class="footer">
-    <span>N'avez-vous pas de compte? <a href="./inscrire.php"><u>Enregistrer ici</u></a></span>
+  <!-- <span>Avez-vous déjà un compte? <a href="./connexion.php"><u>Identification ici</u></a></span> -->
+  <span>N'avez-vous pas de compte? <a href="./inscrire.php"><u>Enregistrer ici</u></a></span>
+
+
+   <!-- <span>Ou se connecter avec les reseaux sociaux</span> -->
+   <!-- <div class="social-fields"> -->
+    <!-- <div class="social-field twitter"> -->
+     <!-- <a href="#"> -->
+      <!-- <i class="fab fa-twitter"></i> -->
+      <!-- Sign in with Twitter -->
+     <!-- </a> -->
+    <!-- </div> -->
+    <!-- <div class="social-field facebook"> -->
+     <!-- <a href="#"> -->
+      <!-- <i class="fab fa-facebook-f"></i> -->
+      <!-- Sign in with Facebook -->
+     <!-- </a> -->
+    <!-- </div> -->
+   <!-- </div> -->
   </div>
  </main>
 </body>

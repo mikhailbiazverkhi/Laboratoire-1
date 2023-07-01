@@ -21,7 +21,6 @@ body {
 main.container {
   background: white;
   min-width: 640px;
-  min-height: 58vh;  /* min-height: 80vh;  */
   padding: 2rem;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
@@ -37,7 +36,7 @@ main h2::before {
   content: '';
   position: absolute;
   height: 4px;
-  width: 25px;
+  width: 20px;    /*width: 25px;*/
   bottom: 3px;
   left: 0;
   border-radius: 8px;
@@ -49,10 +48,15 @@ form {
   flex-direction: column;
 }
 
+form.gap {
+  gap: 10px;
+}
+
 .input-field {
   position: relative;
 }
 
+/* form .input-field:first-child { */
 form .input-field {
   margin-bottom: 1.5rem;
 }
@@ -124,3 +128,34 @@ form input[type='submit']:hover {
   font-size: 1rem; /* font-size: 0.8rem; */
   text-align: center;
 }
+
+.description {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+.description textarea {
+  outline: none;
+  margin-top: 15px;
+  height: 100px;
+  border: solid 3px gray;
+}
+
+/* .avis {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.avis textarea {
+  margin-top: 15px;
+  height: 100px;
+  border: solid 3px gray;
+  border-radius: 4px;
+} */
+
+/* .text-danger {
+  color: red;
+  font-size: 1.2rem;
+  font-weight: bold;
+} */

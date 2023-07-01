@@ -62,7 +62,7 @@ echo '</pre>';
 <body>
    <header class="header headerBG">
       <div class="logoDiv">
-         <a href="#home"><img src="foody-logo.jpg" alt="Logo Image" class="logo"></a>
+         <a href="#home"><img src="/logo/foody-logo.jpg" alt="Logo Image" class="logo"></a>
       </div>
 
       <div class="navBar" id="nav_bar">
@@ -94,7 +94,6 @@ echo '</pre>';
                   <input type="text"/>
                   <button type="button">Recherche</button>
                </form>
-
             </li>
          </ul>
       </div>
@@ -109,7 +108,6 @@ echo '</pre>';
       <div class="sectionIntro">
          <div class="headerInfo container">
             <h2 class="title">Oeuvres des Cegeps de <?=$userPseudo?><h2>
-
          </div>
       </div>
       <div class="boxesContainer container">

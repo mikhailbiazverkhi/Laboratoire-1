@@ -1,6 +1,4 @@
 <?php
-// session_start();
-// require './user.php';
 
 $filename = __DIR__ . '/public/data/users.json';
 
@@ -94,7 +92,6 @@ if (isset($_POST["continuer"])) {
         }
         return true;
     }
-
 ?>
 
 
@@ -106,14 +103,14 @@ if (isset($_POST["continuer"])) {
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>Sign Up</title>
- <link rel="stylesheet" href="public/css/inscrire.css">
+ <link rel="stylesheet" href="public/css/style.css">
 </head>
 
 <body>
 
  <main class="container">
   <h2>S'inscrire</h2>
-  <form action="" method="POST">
+  <form class="gap" action="" method="POST">
    <div class="input-field">
     <input type="text" name="pseudo" id="pseudo" value="<?=$pseudo ?? ''?>" placeholder="Entrer un pseudo"/>
     <div class="underline"></div>

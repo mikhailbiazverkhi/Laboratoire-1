@@ -38,7 +38,7 @@ $localisations = array_unique(array_column($tableauRepas, 'localisation'));
 <body>
    <header class="header">
       <div class="logoDiv">
-         <a href="#home"><img src="foody-logo.jpg" alt="Logo Image" class="logo"></a>
+         <a href="#home"><img src="/logo/foody-logo.jpg" alt="Logo Image" class="logo"></a>
       </div>
 
       <div class="navBar" id="nav_bar">

@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['user'])) {
-    header('Location: /');
+if(!isset($_SESSION['user'])){
+  header('Location: /');
 }
 
 $filename = __DIR__ . '/public/data/users.json';
@@ -28,7 +28,7 @@ if (isset($_POST["ajouter"])) {
         'nomRepas' => FILTER_SANITIZE_SPECIAL_CHARS,
         'prixRepas' => FILTER_SANITIZE_SPECIAL_CHARS,
         'localisation' => FILTER_SANITIZE_SPECIAL_CHARS,
-        'description' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
+        'description' => FILTER_SANITIZE_FULL_SPECIAL_CHARS
     ]);
 
     $nomRepas = $_POST['nomRepas'] ?? '';
@@ -69,18 +69,21 @@ if (isset($_POST["ajouter"])) {
             'prixRepas' => $prixRepas,
             'localisation' => $localisation,
             'description' => $description,
-            'repasId' => time(),
-        ],
+            'repasId' => time()
+        ]
         ];
 
         file_put_contents($filename, json_encode($users));
-        header('Location: /indexUser.php');
+
+          header('Location: /indexUser.php');
+
     }
 }
 
-if (isset($_POST["annuler"])) {
-    header('Location: /indexUser.php');
+if (isset($_POST["annuler"])) { 
+  header('Location: /indexUser.php');
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -90,7 +93,7 @@ if (isset($_POST["annuler"])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ajouter un repas</title>
-  <link rel="stylesheet" href="public/css/style.css">
+  <link rel="stylesheet" href="public/css/ajoutRepas.css">
 </head>
 
 <body>
@@ -99,9 +102,11 @@ if (isset($_POST["annuler"])) {
     <form action="" method="POST" enctype="multipart/form-data">
       <div class="input-field">
         <label for="nomRepas">Nom du Repas</label>
+        <!-- <input type="text" name="nomRepas" id="nomRepas" placeholder="Veuillez entrer un Nom" value="<?=$nomRepas ?? ''?>"> -->
         <input type="text" name="nomRepas" id="nomRepas" value="<?=$nomRepas ?? ''?>">
         <?php if ($errors['nomRepas']): ?>
           <p style="color:red;"><?=$errors['nomRepas']?></p>
+          <!-- <p class="text-danger""><?=$errors['nomRepas']?></p> -->
         <?php endif;?>
         <div class="underline"></div>
       </div>
@@ -117,6 +122,8 @@ if (isset($_POST["annuler"])) {
 
       <div class="input-field">
         <label for="prixRepas">Prix du repas</label>
+        <!-- <input type="number" name="prixRepas" id="prixRepas" placeholder="Entrer le prix du repas" value="<?=$prixRepas ?? ''?>"> -->
+        <!-- <input type="number" name="prixRepas" id="prixRepas" value="<?=$prixRepas ?? ''?>"> -->
         <input type="text" name="prixRepas" id="prixRepas" value="<?=$prixRepas ?? ''?>">
         <?php if ($errors['prixRepas']): ?>
           <p style="color:red;"><?=$errors['prixRepas']?></p>
@@ -125,6 +132,7 @@ if (isset($_POST["annuler"])) {
       </div>
       <div class="input-field">
         <label for="localisation">Localisation</label>
+        <!-- <input type="text" name="localisation" id="localisation" placeholder="Entrer la Localisation" value="<?=$prixRepas ?? ''?>"> -->
         <input type="text" name="localisation" id="localisation" value="<?=$localisation ?? ''?>">
         <?php if ($errors['localisation']): ?>
           <p style="color:red;"><?=$errors['localisation']?></p>
@@ -134,12 +142,14 @@ if (isset($_POST["annuler"])) {
 
       <div class="description">
         <label for="description">Description</label>
+        <!-- <textarea name="description" id="description" placeholder="Description"><?=$description ?? ''?></textarea> -->
         <textarea name="description" id="description"><?=$description ?? ''?></textarea>
         <?php if ($errors['description']): ?>
           <p style="color:red;"><?=$errors['description']?></p>
         <?php endif;?>
         <div class="underline"></div>
       </div>
+
 
       <input type="submit" name="ajouter" value="Ajouter">
       <input type="submit" name="annuler" value="Annuler"/>

@@ -21,7 +21,7 @@ body {
 main.container {
   background: white;
   min-width: 640px;
-  min-height: 45vh;  /* min-height: 80vh;  */
+  /* min-height: 80vh;  */
   padding: 2rem;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
@@ -37,7 +37,7 @@ main h2::before {
   content: '';
   position: absolute;
   height: 4px;
-  width: 25px;
+  width: 12%;    /*width: 25px;*/
   bottom: 3px;
   left: 0;
   border-radius: 8px;
@@ -47,13 +47,15 @@ main h2::before {
 form {
   display: flex;
   flex-direction: column;
+  gap: 10px;
 }
 
 .input-field {
   position: relative;
 }
 
-form .input-field:first-child {
+/* form .input-field:first-child { */
+form .input-field {
   margin-bottom: 1.5rem;
 }
 
