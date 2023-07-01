@@ -19,6 +19,12 @@ $errors = [
 
 $userId = $_SESSION['user']['userId'];
 
+// if (file_exists($filename)) {
+//     $users = json_decode(file_get_contents($filename), true) ?? [];
+//     $userIndex = array_search($userId, array_column($users, 'userId'));
+//     //$user = $users[$userIndex];
+// }
+
 $users = getTableauUsers($filename);
 
 $userIndex = array_search($userId, array_column($users, 'userId'));
@@ -73,6 +79,7 @@ if (isset($_POST["ajouter"])) {
         ],
         ];
 
+        // file_put_contents($filename, json_encode($users));
         writeTableauUsersInFile($filename, $users);
         header('Location: /profil.php');
     }

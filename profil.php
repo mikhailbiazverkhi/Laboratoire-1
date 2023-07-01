@@ -1,7 +1,16 @@
 <?php
+
 session_start();
 
 require './helpers/functions.php';
+
+if (!isset($_SESSION['user'])) {
+    header('Location: /');
+    die;
+} else {
+    $userId = $_SESSION['user']['userId'];
+    $userPseudo = $_SESSION['user']['pseudo'];
+}
 
 $filename = __DIR__ . '/public/data/users.json';
 
@@ -13,7 +22,23 @@ $tableauRepas = mergeTableauRepas($tableauxRepasParUser);
 
 $localisations = array_unique(array_column($tableauRepas, 'localisation'));
 
-$pageTitle = "Oeuvres des Cegeps";
+$userRepas = getTableauUserRepas($userId, $users);
+
+$tableauRepas = $userRepas;
+
+$pageTitle = "Oeuvres des Cegeps de ".$userPseudo;
+
+//triage localisation
+// $userRepasLocalisation = [];
+// foreach($userRepas as $repas) {
+
+// if($repas['localisation'] == )
+// $userRepasLocalisation = [...$userRepasLocalisation ?? [], $repas];
+// }
+// echo '<pre>';
+// // print_r($userRepasLocalisation);
+// echo '</pre>';
+
 ?>
 
 <!DOCTYPE html>
@@ -34,30 +59,26 @@ $pageTitle = "Oeuvres des Cegeps";
 
       <div>
          <ul class="navList">
+            <li class="navItem">Hi, <?=$userPseudo?></li>
             <li class="navItem"><a href="/index.php" class="navLink">Accueil</a></li>
-
-            <?php if(isset($_SESSION['user'])) :?>
-            <li class="navItem"><a href="/profil.php" class="navLink">Profil</a></li>
-            <?php endif?>
+            <li class="navItem"><a href="/ajoutRepas.php" class="navLink">Ajouter Repas</a></li>
 
             <?php require './includes/triageEtRecherche.php'?>
-            
+
          </ul>
       </div>
 
       <div class="accountBtn">
-      <?php if(isset($_SESSION['user'])) :?>
          <a href="/sortir.php" class="contactLink">Sortir</a>
-      <?php else :?>
-         <a href="/connexion.php" class="contactLink"><span>Se connecter</span></a>
-      <?php endif;?>
       </div>
+
    </header>
 
    <?php require "./includes/listeRepas.php"?>
-   
+
    <!-- <section class="productionSection section">
       ($tableauRepas as $repas) -->
-      
+   
 </body>
+
 </html>

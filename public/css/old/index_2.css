@@ -175,6 +175,10 @@ li {
     padding: 6rem 0;
   }
 
+  /* .boxesContainer .sHide {
+    display: block;
+  } */
+
   .navList {
     display: flex;
   }
@@ -194,6 +198,13 @@ li {
     grid-template-columns: repeat(3, 1fr);
   }
   
+  /* .sectionTop {
+    box-sizing: border-box;
+    padding: 1rem 5rem !important;
+    margin: auto;
+    color: var(--textColor);
+    background: var(--primaryColor);
+  } */
 }
 
 @media screen and (min-width: 768px) {
@@ -207,6 +218,9 @@ li {
   .navLink {
     font-size: 1.2rem;
   }
+  /* .navBar .navItem {
+    margin: 0 1rem !important;
+  } */
   
   .container {
     width: 70%;

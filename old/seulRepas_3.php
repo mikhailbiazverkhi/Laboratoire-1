@@ -36,7 +36,6 @@ $users = getTableauUsers($filename);
     $indexRepas = array_search($repasId, array_column($users[$indexUser]['repas'], 'repasId'));
     $repasAvis = $users[$indexUser]['repas'][$indexRepas]['avis'] ?? [];
 
-
 if (isset($_POST["envoyer"])) {
     $_POST = filter_input_array(INPUT_POST, [
         'note' => FILTER_SANITIZE_SPECIAL_CHARS,
@@ -66,7 +65,6 @@ if (isset($_POST["envoyer"])) {
             'userPseudo' => $_SESSION['user']['pseudo']
         ],
         ];
-
 
         writeTableauUsersInFile($filename, $users);
         header('Location: /seulRepas.php?id='.$repasId);

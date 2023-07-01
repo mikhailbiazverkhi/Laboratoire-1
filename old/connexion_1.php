@@ -30,6 +30,9 @@ if (isset($_POST["continuer"])) {
     }
 
     if (empty(array_filter($errors, fn($e) => $e !== ''))) {
+        // if (file_exists($filename)) {
+        //     $users = json_decode(file_get_contents($filename), true) ?? [];
+        // }
 
         $users = getTableauUsers($filename);
 

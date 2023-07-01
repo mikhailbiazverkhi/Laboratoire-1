@@ -37,11 +37,35 @@ $pageTitle = "Oeuvres des Cegeps";
             <li class="navItem"><a href="/index.php" class="navLink">Accueil</a></li>
 
             <?php if(isset($_SESSION['user'])) :?>
-            <li class="navItem"><a href="/profil.php" class="navLink">Profil</a></li>
+            <li class="navItem"><a href="/indexUser.php" class="navLink">Profil</a></li>
             <?php endif?>
 
             <?php require './includes/triageEtRecherche.php'?>
-            
+            <!-- <li class="navItem">
+               <label for="localisation">Localisation:</label>
+               <select name="localisation" id="localisation">
+               <option value="toutes">toutes</option>
+               <?php foreach ($localisations as $localisation) : ?>
+                  <option value="<?=$localisation?>"><?=$localisation?></option>
+               <?php endforeach; ?>
+               </select>
+            </li>
+
+            <li class="navItem">
+               <label for="prix">Prix:</label>
+               <select name="prix" id="prix">
+                  <option value="croissant">Croissant</option>
+                  <option value="decroissant">Décroissant</option>
+               </select>
+            </li>
+
+            <li class="navItem">
+               <form action="">
+                  <input type="text"/>
+                  <button type="button">Recherche</button>
+               </form>
+
+            </li> -->
          </ul>
       </div>
 
@@ -50,6 +74,7 @@ $pageTitle = "Oeuvres des Cegeps";
          <a href="/sortir.php" class="contactLink">Sortir</a>
       <?php else :?>
          <a href="/connexion.php" class="contactLink"><span>Se connecter</span></a>
+         <!-- <a href="/inscrire.php" class="contactLink">S'inscrire</a> -->
       <?php endif;?>
       </div>
    </header>

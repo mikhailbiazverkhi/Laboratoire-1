@@ -2,6 +2,8 @@
 
 session_start();
 
+require './functions.php';
+
 if (!isset($_SESSION['user'])) {
     header('Location: /');
     die;
@@ -12,24 +14,29 @@ if (!isset($_SESSION['user'])) {
 
 $filename = __DIR__ . '/public/data/users.json';
 
-if (file_exists($filename)) {
-    $users = json_decode(file_get_contents($filename), true) ?? [];
+$users = getTableauUsers($filename);
+// if (file_exists($filename)) {
+//     $users = json_decode(file_get_contents($filename), true) ?? [];
 
-    $userIndex = array_search($userId, array_column($users, 'userId'));
+   //  $userIndex = array_search($userId, array_column($users, 'userId'));
 
-    if(isset($users[$userIndex]['repas'])){
-      $userRepas = $users[$userIndex]['repas'];
-    }
-    else {
-      $userRepas = [];
-    }
+   //  if(isset($users[$userIndex]['repas'])){
+   //    $userRepas = $users[$userIndex]['repas'];
+   //  }
+   //  else {
+   //    $userRepas = [];
+   //  }
 
-    $tableauxRepasParUser = array_column($users, 'repas');
-}
+   $userRepas = getTableauUserRepas($userId, $users);
+   $tableauxRepasParUser = array_column($users, 'repas');
+// }
 
-foreach ($tableauxRepasParUser as $tableauxRepas) {
-    $tableauRepas = array_merge($tableauRepas ?? [], $tableauxRepas);
-}
+// foreach ($tableauxRepasParUser as $tableauxRepas) {
+//     $tableauRepas = array_merge($tableauRepas ?? [], $tableauxRepas);
+// }
+
+$tableauRepas = mergeTableauRepas($tableauxRepasParUser);
+
 
 $localisations = array_unique(array_column($tableauRepas, 'localisation'));
 
@@ -41,9 +48,9 @@ foreach($userRepas as $repas) {
 // if($repas['localisation'] == )
 $userRepasLocalisation = [...$userRepasLocalisation ?? [], $repas];
 }
-echo '<pre>';
-// print_r($userRepasLocalisation);
-echo '</pre>';
+// echo '<pre>';
+// // print_r($userRepasLocalisation);
+// echo '</pre>';
 
 $pageTitle = "Oeuvres des Cegeps de ".$userPseudo;
 
