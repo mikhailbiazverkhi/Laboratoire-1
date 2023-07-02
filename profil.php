@@ -38,6 +38,13 @@ if(isset($_GET['localisation'])){
    $tableauRepas = filtreLocalisations($tableauRepas, $localisation);
 }
 
+//trier par prix
+if(isset($_GET['prix'])){
+   $_GET = filter_input_array(INPUT_GET, FILTER_SANITIZE_SPECIAL_CHARS);
+   $ordrePrix = $_GET['prix'] ?? '';
+   $tableauRepas = sortParPrix($tableauRepas, $ordrePrix);
+}
+
 ?>
 
 <!DOCTYPE html>

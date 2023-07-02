@@ -78,8 +78,9 @@ function estPseudoUnique($pseudo)
 }
 
 
-// fonction de filtrage des localisations
+//fonctions de filtrage, triage et recheche
 
+// fonction de filtrage des localisations
 function filtreLocalisations($tableauRepas, $localisation){
     if(!empty($localisation)){
         $repasParLocalisation = [];
@@ -93,6 +94,23 @@ function filtreLocalisations($tableauRepas, $localisation){
     return $tableauRepas;
 }
 
+// fonction de triage par prix
+function sortParPrix($tableauRepas, $ordre){
+    if(!empty($ordre)){
+        $sortTableau = [];
+        $tableauPrixRepas = array_column($tableauRepas, 'prixRepas');
+        if($ordre === "croissant"){
+           asort($tableauPrixRepas);
+        } else if ($ordre === "decroissant"){
+           arsort($tableauPrixRepas);
+        }
+        foreach($tableauPrixRepas as $key => $value){
+            $sortTableau = [...$sortTableau, $tableauRepas[$key]];
+        }        
+       return $sortTableau;
+    }
+    return $tableauRepas;
+ }
 
 
 ?>

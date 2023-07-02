@@ -20,8 +20,9 @@
           </a>
 
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="navLink dropdown-item" href="#">Croissant</a></li>
-            <li><a class="navLink dropdown-item" href="#">Décroissant</a></li>
+          <li><a class="navLink dropdown-item" href="<?=$nomFichier?>">--------</a></li>
+            <li><a class="navLink dropdown-item" href="<?=$nomFichier?>?prix=croissant">Croissant</a></li>
+            <li><a class="navLink dropdown-item" href="<?=$nomFichier?>?prix=decroissant">Décroissant</a></li>
           </ul>
         </li>
 

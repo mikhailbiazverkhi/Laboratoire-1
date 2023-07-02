@@ -25,6 +25,55 @@ if(isset($_GET['localisation'])){
    $tableauRepas = filtreLocalisations($tableauRepas, $localisation);
 }
 
+//trier par prix
+if(isset($_GET['prix'])){
+   $_GET = filter_input_array(INPUT_GET, FILTER_SANITIZE_SPECIAL_CHARS);
+   $ordrePrix = $_GET['prix'] ?? '';
+   $tableauRepas = sortParPrix($tableauRepas, $ordrePrix);
+}
+
+// echo "<pre>";
+// print_r($tableauRepas);
+// echo "<pre>";
+
+// $newTab = array_column($tableauRepas, 'prixRepas');
+
+// echo "<pre>";
+// print_r($newTab);
+// echo "<pre>";
+
+// asort($newTab);
+
+// echo "<pre>";
+// print_r($newTab);
+// echo "<pre>";
+
+// foreach($newTab as $key => $value){
+//    echo "<br>";
+//    print_r($tableauRepas[$key]);
+// }
+
+// // echo "<pre>";
+// // print_r(arry);
+// // echo "<pre>";
+
+// function sortParPrix($tableauRepas, $ordre){
+//    if(!empty($ordre)){
+//       $tableauPrixRepas = array_column($tableauRepas, 'prixRepas');
+//       if($ordre === "croissant"){
+//          asort($tableauPrixRepas);
+//       } else if ($ordre === "decroissant"){
+//          arsort($tableauPrixRepas);
+//       }
+//       return $tableauPrixRepas;
+//    }
+//    return $tableauRepas;
+// }
+
+
+
+
+// die;
 ?>
 
 <!DOCTYPE html>
