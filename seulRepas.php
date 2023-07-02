@@ -94,14 +94,14 @@ if (isset($_POST["annuler"])) {
 
 <body>
 
-<div class="container d-grid gap-3 px-4 mt-3">
+<div class="container d-grid gap-1 px-4">
     <div class="row">
-        <div class="col my-5">
+        <div class="col mt-4 mb-4">
             <div class="text-center">
                 <?php if ($_SESSION['user']['userId'] !== $userId): ?>
-                    <h3>Le repas d'utilisateur: <span><?=$userPseudo?></span></h3>
+                    <h4>Le repas d'utilisateur: <span><?=$userPseudo?></span></h4>
                 <?php else: ?>
-                    <h3>Le repas d'utilisateur: <span><?=$_SESSION['user']['pseudo']?></span></h3>
+                    <h4>Le repas d'utilisateur: <span><?=$_SESSION['user']['pseudo']?></span></h4>
                 <?php endif;?>
             </div>
         </div>
@@ -113,28 +113,20 @@ if (isset($_POST["annuler"])) {
             <img src="<?=$repasChoisi['cheminImage']?>" class="img-fluid" alt="Food Image">
         </div>
 
-        <div class="col d-grid gap-3">
-            <div>
-                <h4>Nom du repas: <?=$repasChoisi['nomRepas']?></h4>
-            </div>
-            <div>
-                <h4>Nom du repas: <?=$repasChoisi['prixRepas']?>$</h4>
-            </div>
-            <div>
-                <h4>Localisation: <?=$repasChoisi['localisation']?></h4>
-            </div>
-            <div>
-                <h4>Description: </h4>
+        <div class="col d-grid gap-1">
+                <h5>Nom du repas: <?=$repasChoisi['nomRepas']?></h5>
+                <h5>Nom du repas: <?=$repasChoisi['prixRepas']?>$</h5>
+                <h5>Localisation: <?=$repasChoisi['localisation']?></h5>
+                <h5>Description: </h5>
                 <p><?=$repasChoisi['description']?></p>
-            </div>
         </div>
   </div>
 
   <div class="row">
 
-    <div class="col my-5">
-        <h3 class="text-center">Tous les commentaires: </h3>
-        <div style="overflow-y:scroll; height:300px;">
+    <div class="col my-4">
+        <h4 class="text-center">Tous les commentaires: </h4>
+        <div style="overflow-y:scroll; height:250px;">
             <table>
                 <tr>
                   <th>Utilisateur</th>
@@ -152,10 +144,10 @@ if (isset($_POST["annuler"])) {
         </div>
     </div>
 
-    <div class="col my-5">
+    <div class="col mt-4 mb-5">
 
         <?php if ($_SESSION['user']['userId'] !== $userId): ?>
-            <h3 class="text-center">Entrez votre commentaire et votre note: </h3>
+            <h4 class="text-center">Entrez votre commentaire et votre note: </h4>
             <form action="seulRepas.php?id=<?=$repasId?>" method="POST">
 
                 <div class="mb-3">

@@ -13,6 +13,10 @@
   font-family: 'Poppins', sans-serif;
 }
 
+p, h5{
+  margin:0;
+}
+
 .container{
   background: linear-gradient(20deg, #c5c8c7, var(--greyBG));
 }
