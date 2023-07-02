@@ -52,4 +52,30 @@ function estPseudoUnique($pseudo)
     return true;
 }
 
+
+function noteMoyenneRepas($repas){
+    $sum = 0;
+    if(isset($repas['avis'])){
+        foreach($repas['avis'] as $avis){
+            $sum += $avis['note'];
+        }
+        return round($sum/count($repas['avis']),1);
+    }
+    return 0;
+}
+
+function nombreCommentairs($repas){
+    $count = 0;
+    if(isset($repas['avis'])){
+        foreach($repas['avis'] as $avis){
+            if(!empty($avis['commentaire'])){
+                $count++;
+            }
+        }
+    }
+    return $count;
+}
+
+
+
 ?>

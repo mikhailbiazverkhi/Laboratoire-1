@@ -1,4 +1,4 @@
-   
+
    
    <section class="productionSection section">
       <div class="sectionIntro">
@@ -24,6 +24,15 @@
             <span class="boxLocalisation">
                <?=$repas['localisation']?>
             </span>
+
+            <div class="imgDesc">
+            <span class="imageTitle">
+            <i class="fa-light fa-thumbs-up" style="color: #06841b;"></i>
+            <?=noteMoyenneRepas($repas)?>
+            <i class="fa-light fa-comment" style="color: #aa183d;"></i>
+            <?=nombreCommentairs($repas)?>
+            </span>
+            </div>
 
             <a href="seulRepas.php?id=<?=$repas['repasId']?>">
                <div class="boxImgBtn">
