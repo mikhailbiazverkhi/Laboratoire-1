@@ -14,6 +14,17 @@ $tableauRepas = mergeTableauRepas($tableauxRepasParUser);
 $localisations = array_unique(array_column($tableauRepas, 'localisation'));
 
 $pageTitle = "Oeuvres des Cegeps";
+
+//nom du fichier pour former lien de la GET requête (voir le fichier "triageEtRecherche.php")
+$nomFichier = $_SERVER['SCRIPT_NAME'];
+
+//filtrer par localisation
+if(isset($_GET['localisation'])){
+   $_GET = filter_input_array(INPUT_GET, FILTER_SANITIZE_SPECIAL_CHARS);
+   $localisation = $_GET['localisation'] ?? '';
+   $tableauRepas = filtreLocalisations($tableauRepas, $localisation);
+}
+
 ?>
 
 <!DOCTYPE html>

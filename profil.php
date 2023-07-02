@@ -28,16 +28,15 @@ $tableauRepas = $userRepas;
 
 $pageTitle = "Oeuvres des Cegeps de ".$userPseudo;
 
-//triage localisation
-// $userRepasLocalisation = [];
-// foreach($userRepas as $repas) {
+//nom du fichier pour former lien de la GET requête (voir le fichier "triageEtRecherche.php")
+$nomFichier = $_SERVER['SCRIPT_NAME'];
 
-// if($repas['localisation'] == )
-// $userRepasLocalisation = [...$userRepasLocalisation ?? [], $repas];
-// }
-// echo '<pre>';
-// // print_r($userRepasLocalisation);
-// echo '</pre>';
+//filtrer par localisation
+if(isset($_GET['localisation'])){
+   $_GET = filter_input_array(INPUT_GET, FILTER_SANITIZE_SPECIAL_CHARS);
+   $localisation = $_GET['localisation'] ?? '';
+   $tableauRepas = filtreLocalisations($tableauRepas, $localisation);
+}
 
 ?>
 

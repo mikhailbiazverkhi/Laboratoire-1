@@ -78,8 +78,20 @@ function estPseudoUnique($pseudo)
 }
 
 
+// fonction de filtrage des localisations
 
-
+function filtreLocalisations($tableauRepas, $localisation){
+    if(!empty($localisation)){
+        $repasParLocalisation = [];
+        foreach($tableauRepas as $repas){
+           if($repas['localisation'] === $localisation){
+              $repasParLocalisation = [...$repasParLocalisation, $repas];
+           }
+        } 
+        return $repasParLocalisation;
+    } 
+    return $tableauRepas;
+}
 
 
 

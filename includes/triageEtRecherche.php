@@ -6,9 +6,9 @@
           </a>
 
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-
+          <li><a class="navLink dropdown-item" href="<?=$nomFichier?>">-- toutes --</a></li>
           <?php foreach ($localisations as $localisation) : ?>
-            <li><a class="navLink dropdown-item" href="#"><?=$localisation?></a></li>
+            <li><a class="navLink dropdown-item" href="<?=$nomFichier?>?localisation=<?=$localisation?>"><?=$localisation?></a></li>
           <?php endforeach; ?>
 
           </ul>
