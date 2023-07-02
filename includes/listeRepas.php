@@ -19,7 +19,7 @@
             </div>
 
             <span class="boxPrice">
-               $<?=$repas['prixRepas']?>
+               $<?=round($repas['prixRepas'], 2)?>
             </span>
             <span class="boxLocalisation">
                <?=$repas['localisation']?>
