@@ -115,6 +115,7 @@ function sortParPrix($tableauRepas, $ordre){
 
 /* fonction de recherche par critères 
 ($critere = 'nomRepas' Nom de repas ou $critere = 'description' repas spécifiques*/ 
+
  function rechercheParCriteres($tableauRepas, $motcle, $critere){
     if(!empty($motcle)){
         $tableauRepasCherches = [];
@@ -130,5 +131,41 @@ function sortParPrix($tableauRepas, $ordre){
     }
     return $tableauRepas;
  }
+
+
+//  function rechercheParNomRepas($tableauRepas, $motcle){
+//     if(!empty($motcle)){
+//         $tableauRepasCherches = [];
+//         $tableauNomRepas = array_column($tableauRepas, 'nomRepas');
+
+//         $tableauNomsCherches = 
+//         array_filter($tableauNomRepas, fn($v) => strripos($v, $motcle) !== FALSE);
+
+//         foreach($tableauNomsCherches as $key => $value){
+//             $tableauRepasCherches = [...$tableauRepasCherches, $tableauRepas[$key]];
+//         }        
+//        return $tableauRepasCherches;
+//     }
+//     return $tableauRepas;
+//  }
+
+
+
+//  function rechercheParRepasSpecifiques($tableauRepas, $motcle){
+//     if(!empty($motcle)){
+//         $tableauRepasCherches = [];
+//         $tableauNomRepas = array_column($tableauRepas, 'description');
+
+//         $tableauNomsCherches = 
+//         array_filter($tableauNomRepas, fn($v) => strripos($v, $motcle) !== FALSE);
+
+//         foreach($tableauNomsCherches as $key => $value){
+//             $tableauRepasCherches = [...$tableauRepasCherches, $tableauRepas[$key]];
+//         }        
+//        return $tableauRepasCherches;
+//     }
+//     return $tableauRepas;
+//  }
+
 
 ?>

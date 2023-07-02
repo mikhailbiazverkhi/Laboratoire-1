@@ -32,48 +32,18 @@ if(isset($_GET['prix'])){
    $tableauRepas = sortParPrix($tableauRepas, $ordrePrix);
 }
 
-// echo "<pre>";
-// print_r($tableauRepas);
-// echo "<pre>";
+/* recherche par deux critères: nom de plat ($critere = 'nomRepas') 
+et repas spécifiques ($critere = 'description')*/
+if(isset($_GET['recherche'])){
+   $_GET = filter_input_array(INPUT_GET, FILTER_SANITIZE_SPECIAL_CHARS);
+   $motcle = $_GET['recherche'] ?? '';
 
-// $newTab = array_column($tableauRepas, 'prixRepas');
+   $critere = 'nomRepas';          // Nom de repas
+   //$critere = 'description';     // Repas spécifiques
 
-// echo "<pre>";
-// print_r($newTab);
-// echo "<pre>";
+   $tableauRepas = rechercheParCriteres($tableauRepas, $motcle, $critere);
+}
 
-// asort($newTab);
-
-// echo "<pre>";
-// print_r($newTab);
-// echo "<pre>";
-
-// foreach($newTab as $key => $value){
-//    echo "<br>";
-//    print_r($tableauRepas[$key]);
-// }
-
-// // echo "<pre>";
-// // print_r(arry);
-// // echo "<pre>";
-
-// function sortParPrix($tableauRepas, $ordre){
-//    if(!empty($ordre)){
-//       $tableauPrixRepas = array_column($tableauRepas, 'prixRepas');
-//       if($ordre === "croissant"){
-//          asort($tableauPrixRepas);
-//       } else if ($ordre === "decroissant"){
-//          arsort($tableauPrixRepas);
-//       }
-//       return $tableauPrixRepas;
-//    }
-//    return $tableauRepas;
-// }
-
-
-
-
-// die;
 ?>
 
 <!DOCTYPE html>

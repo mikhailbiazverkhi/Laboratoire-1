@@ -28,8 +28,6 @@ $tableauRepas = $userRepas;
 
 $pageTitle = "Oeuvres des Cegeps de ".$userPseudo;
 
-
-
 //nom du fichier pour former lien de la GET requête (voir le fichier "triageEtRecherche.php")
 $nomFichier = $_SERVER['SCRIPT_NAME'];
 
@@ -47,8 +45,21 @@ if(isset($_GET['prix'])){
    $tableauRepas = sortParPrix($tableauRepas, $ordrePrix);
 }
 
-/* recherche par deux critères: nom de plat ($critere = 'nomRepas') 
-et repas spécifiques ($critere = 'description')*/
+//recherche par nom de plat
+// if(isset($_GET['recherche'])){
+//    $_GET = filter_input_array(INPUT_GET, FILTER_SANITIZE_SPECIAL_CHARS);
+//    $motcle = $_GET['recherche'] ?? '';
+//    $tableauRepas = rechercheParNomRepas($tableauRepas, $motcle);
+// }
+
+
+//recherche par repas spécifiques
+// if(isset($_GET['recherche'])){
+//    $_GET = filter_input_array(INPUT_GET, FILTER_SANITIZE_SPECIAL_CHARS);
+//    $motcle = $_GET['recherche'] ?? '';
+//    $tableauRepas = rechercheParRepasSpecifiques($tableauRepas, $motcle);
+// }
+
 if(isset($_GET['recherche'])){
    $_GET = filter_input_array(INPUT_GET, FILTER_SANITIZE_SPECIAL_CHARS);
    $motcle = $_GET['recherche'] ?? '';
@@ -58,6 +69,8 @@ if(isset($_GET['recherche'])){
 
    $tableauRepas = rechercheParCriteres($tableauRepas, $motcle, $critere);
 }
+
+// var_dump(!empty($_GET['recherche']));
 
 ?>
 
