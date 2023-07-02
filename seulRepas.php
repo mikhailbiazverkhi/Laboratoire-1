@@ -173,7 +173,7 @@ if (isset($_POST["annuler"])) {
                         <p style="color:red;"><?=$errors['commentaire']?></p>
                     <?php endif;?>
                 </div>
-                <div class="d-flex justify-content-end gap-5" >
+                <div class="d-flex justify-content-end gap-5 mt-4" >
                     <input class="btn btn-primary" type="submit" name="envoyer" value="Envoyer">
                     <input class="btn btn-secondary" type="submit" name="annuler" value="Annuler">
                 </div>
@@ -183,7 +183,7 @@ if (isset($_POST["annuler"])) {
             <div class="d-flex justify-content-around" >
                 <a class="btn btn-primary" role="button" href="/modifierRepas.php?id=<?=$repasId?>">Modifier</a>
                 <a class="btn btn-secondary" role="button" href="/index.php">Annuler</a>
-                <a class="btn btn-danger" role="button" href="#">Supprimer</a>
+                <a class="btn btn-danger" role="button" href="/supprimerRepas.php?id=<?=$repasId?>">Supprimer</a>
             </div>
         <?php endif;?>
     </div>

@@ -16,6 +16,32 @@ function getTableauUserRepas($userId, $users){
 }
 
 
+function noteMoyenneRepas($repas){
+    $sum = 0;
+    if(isset($repas['avis'])){
+        foreach($repas['avis'] as $avis){
+            $sum += $avis['note'];
+        }
+        return round($sum/count($repas['avis']),1);
+    }
+    return 0;
+}
+
+function nombreCommentairs($repas){
+    $count = 0;
+    if(isset($repas['avis'])){
+        foreach($repas['avis'] as $avis){
+            if(!empty($avis['commentaire'])){
+                $count++;
+            }
+        }
+    }
+    return $count;
+}
+
+
+
+
 // les fonctions totales 
 
 function getTableauUsers($filename){
@@ -29,7 +55,6 @@ function getTableauUsers($filename){
 function writeTableauUsersInFile($filename, $users){
     file_put_contents($filename, json_encode($users));
 }
-
 
 
 
@@ -53,28 +78,8 @@ function estPseudoUnique($pseudo)
 }
 
 
-function noteMoyenneRepas($repas){
-    $sum = 0;
-    if(isset($repas['avis'])){
-        foreach($repas['avis'] as $avis){
-            $sum += $avis['note'];
-        }
-        return round($sum/count($repas['avis']),1);
-    }
-    return 0;
-}
 
-function nombreCommentairs($repas){
-    $count = 0;
-    if(isset($repas['avis'])){
-        foreach($repas['avis'] as $avis){
-            if(!empty($avis['commentaire'])){
-                $count++;
-            }
-        }
-    }
-    return $count;
-}
+
 
 
 

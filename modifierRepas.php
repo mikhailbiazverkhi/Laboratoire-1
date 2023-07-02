@@ -22,7 +22,6 @@ $repasId = $_GET['id'];
 
 $userId = $_SESSION['user']['userId'];
 
-
 $users = getTableauUsers($filename);
 
 $userIndex = array_search($userId, array_column($users, 'userId'));
