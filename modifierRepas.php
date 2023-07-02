@@ -17,13 +17,21 @@ $errors = [
     'image' => '',
 ];
 
+$_GET = filter_input_array(INPUT_GET, FILTER_SANITIZE_SPECIAL_CHARS);
+$repasId = $_GET['id'];
+
 $userId = $_SESSION['user']['userId'];
+
 
 $users = getTableauUsers($filename);
 
 $userIndex = array_search($userId, array_column($users, 'userId'));
+$user = $users[$userIndex]['repas'];
 
-if (isset($_POST["ajouter"])) {
+$repasIndex = array_search($repasId, array_column($user, 'repasId'));
+$repas = $user[$repasIndex];
+
+if (isset($_POST["modifier"])) {
     $_POST = filter_input_array(INPUT_POST, [
         'nomRepas' => FILTER_SANITIZE_SPECIAL_CHARS,
         'prixRepas' => FILTER_SANITIZE_SPECIAL_CHARS,
@@ -54,24 +62,12 @@ if (isset($_POST["ajouter"])) {
         $errors['description'] = 'Entrez la description svp !';
     }
 
-    $chemin_image = 'uploads/' . time() . '_' . $_FILES['image']['name'];
-
-    if (!move_uploaded_file($_FILES['image']['tmp_name'], './' . $chemin_image)) {
-        $errors['image'] = 'Téléversez l\'image svp !';
-    }
-
     if (empty(array_filter($errors, fn($e) => $e !== ''))) {
 
-        $users[$userIndex]['repas'] = [...$users[$userIndex]['repas'] ?? [], [
-
-            'nomRepas' => $nomRepas,
-            'cheminImage' => $chemin_image,
-            'prixRepas' => $prixRepas,
-            'localisation' => $localisation,
-            'description' => $description,
-            'repasId' => time()                     /**/
-        ]                                           /**/
-        ];
+        $users[$userIndex]['repas'][$repasIndex]['nomRepas'] = $nomRepas;
+        $users[$userIndex]['repas'][$repasIndex]['prixRepas'] = $prixRepas;
+        $users[$userIndex]['repas'][$repasIndex]['localisation'] = $localisation;
+        $users[$userIndex]['repas'][$repasIndex]['description'] = $description;
 
         writeTableauUsersInFile($filename, $users);
         header('Location: /profil.php');
@@ -95,11 +91,11 @@ if (isset($_POST["annuler"])) {
 
 <body>
   <main class="container">
-    <h2>Ajouter un nouveau repas</h2>
+    <h2>Modifier un repas</h2>
     <form action="" method="POST" enctype="multipart/form-data">
       <div class="input-field">
         <label for="nomRepas">Nom du Repas</label>
-        <input type="text" name="nomRepas" id="nomRepas" value="<?=$nomRepas ?? ''?>">
+        <input type="text" name="nomRepas" id="nomRepas" value="<?=$repas['nomRepas'] ?? ''?>">
         <?php if ($errors['nomRepas']): ?>
           <p style="color:red;"><?=$errors['nomRepas']?></p>
         <?php endif;?>
@@ -107,25 +103,17 @@ if (isset($_POST["annuler"])) {
       </div>
 
       <div class="input-field">
-        <label for="image">Image</label>
-        <input type="file" id="image" name="image" accept="image/*">
-        <?php if ($errors['image']): ?>
-          <p style="color:red;"><?=$errors['image']?></p>
-        <?php endif;?>
-        <div class="underline"></div>
-      </div>
-
-      <div class="input-field">
         <label for="prixRepas">Prix du repas</label>
-        <input type="text" name="prixRepas" id="prixRepas" value="<?=$prixRepas ?? ''?>">
+        <input type="text" name="prixRepas" id="prixRepas" value="<?=$repas['prixRepas'] ?? ''?>">
         <?php if ($errors['prixRepas']): ?>
           <p style="color:red;"><?=$errors['prixRepas']?></p>
         <?php endif;?>
         <div class="underline"></div>
       </div>
+
       <div class="input-field">
         <label for="localisation">Localisation</label>
-        <input type="text" name="localisation" id="localisation" value="<?=$localisation ?? ''?>">
+        <input type="text" name="localisation" id="localisation" value="<?=$repas['localisation'] ?? ''?>">
         <?php if ($errors['localisation']): ?>
           <p style="color:red;"><?=$errors['localisation']?></p>
         <?php endif;?>
@@ -134,14 +122,14 @@ if (isset($_POST["annuler"])) {
 
       <div class="description">
         <label for="description">Description</label>
-        <textarea name="description" id="description"><?=$description ?? ''?></textarea>
+        <textarea name="description" id="description"><?=$repas['description'] ?? ''?></textarea>
         <?php if ($errors['description']): ?>
           <p style="color:red;"><?=$errors['description']?></p>
         <?php endif;?>
         <div class="underline"></div>
       </div>
 
-      <input type="submit" name="ajouter" value="Ajouter">
+      <input type="submit" name="modifier" value="Modifier">
       <input type="submit" name="annuler" value="Annuler"/>
     </form>
   </main>

@@ -15,6 +15,7 @@ $errors = [
     'note' => '',
 ];
 
+$_GET = filter_input_array(INPUT_GET, FILTER_SANITIZE_SPECIAL_CHARS);
 $repasId = $_GET['id'];
 
 $users = getTableauUsers($filename);
@@ -93,7 +94,7 @@ if (isset($_POST["annuler"])) {
 
 <body>
 
-<div class="container d-grid gap-3 px-4">
+<div class="container d-grid gap-3 px-4 mt-3">
     <div class="row">
         <div class="col my-5">
             <div class="text-center">
@@ -133,7 +134,7 @@ if (isset($_POST["annuler"])) {
 
     <div class="col my-5">
         <h3 class="text-center">Tous les commentaires: </h3>
-        <div style="overflow:scroll; height:300px;">
+        <div style="overflow-y:scroll; height:300px;">
             <table>
                 <tr>
                   <th>Utilisateur</th>
@@ -180,7 +181,7 @@ if (isset($_POST["annuler"])) {
 
         <?php else :?>
             <div class="d-flex justify-content-around" >
-                <a class="btn btn-primary" role="button" href="#">Modifier</a>
+                <a class="btn btn-primary" role="button" href="/modifierRepas.php?id=<?=$repasId?>">Modifier</a>
                 <a class="btn btn-secondary" role="button" href="/index.php">Annuler</a>
                 <a class="btn btn-danger" role="button" href="#">Supprimer</a>
             </div>

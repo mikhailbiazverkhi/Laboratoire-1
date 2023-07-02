@@ -2,6 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap');
 :root {
+  --primaryColor: rgb(0, 188, 126);
+  --primaryHover: rgb(5, 151, 103);
+  --secondaryColor: rgb(0, 26, 80);
+  --secondaryHover: rgb(2, 36, 107);
   --textColor: rgb(255, 255, 255);
   --footerBgColor: rgb(29, 29, 29);
   --paragraphColor: rgb(175, 175, 175);
@@ -9,12 +13,29 @@
 }
 
 * {
+  /* margin: 0;
+  border: 0;
+  padding: 0; */
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* body {
+  background-color: var(--primaryColor);
+  background: linear-gradient(20deg, #c5c8c7, var(--primaryColor));
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+} */
+
 .container{
+  /* background-color: var(--greyBG); */
   background: linear-gradient(20deg, #c5c8c7, var(--greyBG));
+  /* height: 100vh; */
 }
 
 img {
@@ -22,6 +43,7 @@ img {
   width: 300px;
   max-height: 300px;
 }
+
 
 table {
   font-family: arial, sans-serif;
