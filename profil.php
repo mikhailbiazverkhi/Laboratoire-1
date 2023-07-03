@@ -46,7 +46,7 @@ require './includes/bloc_filtreEtRecherche.php';
 <body>
    <header class="header">
       <div class="logoDiv">
-         <a href="#home"><img src="/logo/foody-logo.jpg" alt="Logo Image" class="logo"></a>
+         <a href="#home"><img src="logo/foody-logo.jpg" alt="Logo Image" class="logo"></a>
       </div>
 
       <div class="navBar">
